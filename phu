@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+bool fncuse(int n)
+{
+    int S = 0;
+    for (int i = 0; i <= n / 2; i++)
+    {
+        if (n % i == 0)
+        {
+            S += i;
+        }
+    }
+    if (S == n)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    return true;
+}
+
+int main()
+{
+    int n, S(0);
+    cin >> n;
+
+    if (n < 0)
+    {
+        n = -n;
+        if (fncuse(n))
+            cout << "YES";
+        else
+            cout << "NO";
+    }
+
+    if (n < 6 && n >= 0)
+    {
+        cout << "NO";
+    }
+    if (n >= 6)
+    {
+        if (fncuse(n))
+            cout << "YES";
+        else
+            cout << "NO";
+    }
+    return 0;
+}
